@@ -9,7 +9,6 @@ if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_pass = $_POST['confirmpassword'];
-    $after_hash = password_hash($password,PASSWORD_DEFAULT);
 
 }
 if($password == $confirm_pass){
@@ -18,7 +17,7 @@ if($password == $confirm_pass){
     $after_assoc = mysqli_fetch_assoc($count_query);
 
    if($after_assoc['total'] == 0){
-    $insert = "INSERT INTO users (NAME, EMAIL, PASSWORD) VALUES ('$name', '$email', '$after_hash')";
+    $insert = "INSERT INTO users (NAME, EMAIL, PASSWORD) VALUES ('$name', '$email', '$password')";
     $insert_query = mysqli_query($bd_connect, $insert);
     header("location: userlist.php") ;
 

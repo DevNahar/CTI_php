@@ -49,8 +49,8 @@ require_once 'includes/navbar.php';
     <input type="checkbox" class="form-check-input" >
     <label class="form-check-label" >Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary mt-3" name="submit">Submit</button>
-  <button type="Reset" class="btn btn-primary mt-3">Reset</button>
+  <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+  <button type="Reset" class="btn btn-primary">Reset</button>
 </form>
 
    

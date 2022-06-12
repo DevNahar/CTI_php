@@ -1,0 +1,7 @@
+password hash
+login
+logout
+soft delete
+restore
+trash
+modal

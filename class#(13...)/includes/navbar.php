@@ -14,13 +14,7 @@
         </li>   
         <li class="nav-item">
           <a class="nav-link" href="userlist.php">Userlist</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="trash.php">Trash</a>
-        </li> 
-        <li class="nav-item">
-          <a class="nav-link " href="logout.php">Logout</a>
-        </li>      
+        </li>       
         
       
     </div>
