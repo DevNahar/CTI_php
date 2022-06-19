@@ -14,8 +14,8 @@ require_once 'includes/db.php';
 
     $email = $_POST['email'];
     
-  $update = "UPDATE users SET  NAME = '$name', EMAIL = '$email' WHERE ID = $iid ";
-  $update_q = mysqli_query($bd_connect, $update);
+  $update = "UPDATE users SET  name = '$name', email = '$email' WHERE id = $iid ";
+  $update_q = mysqli_query($db_connect, $update);
   header('location: userlist.php');
   
 

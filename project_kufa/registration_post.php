@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once 'backend/db.php';
 
 
     $name = $_POST['name'];
@@ -42,13 +42,13 @@ if (empty($confirm_pass)) {
  
 }
 if($password == $confirm_pass){
-  $count_select = "SELECT count(*) AS total FROM users WHERE EMAIL =  '$email'"; 
-  $count_query = mysqli_query($bd_connect, $count_select);
+  $count_select = "SELECT count(*) AS total FROM users WHERE email =  '$email'"; 
+  $count_query = mysqli_query($db_connect, $count_select);
   $after_assoc = mysqli_fetch_assoc($count_query);
 
     if( $after_assoc['total'] == 0){
-      $insert = "INSERT INTO users (NAME, EMAIL, PASSWORD) VALUES ('$name', '$email', '$after_hash')";
-      $insert_query = mysqli_query($bd_connect, $insert);
+      $insert = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$after_hash')";
+      $insert_query = mysqli_query($db_connect, $insert);
       $_SESSION['reg_success'] = "Registration successfull";
       header("location: login.php") ;
 
@@ -72,13 +72,13 @@ die();
 
 
 if($password == $confirm_pass){
-  $count_select = "SELECT count(*) AS total FROM users WHERE EMAIL =  '$email'"; 
-  $count_query = mysqli_query($bd_connect, $count_select);
+  $count_select = "SELECT count(*) AS total FROM users WHERE email =  '$email'"; 
+  $count_query = mysqli_query($db_connect, $count_select);
   $after_assoc = mysqli_fetch_assoc($count_query);
 
  if($after_assoc['total'] == 0){
-  $insert = "INSERT INTO users (NAME, EMAIL, PASSWORD) VALUES ('$name', '$email', '$password')";
-  $insert_query = mysqli_query($bd_connect, $insert);
+  $insert = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+  $insert_query = mysqli_query($db_connect, $insert);
   header("location: registration.php") ;
 
  }else{
@@ -91,7 +91,7 @@ if($password == $confirm_pass){
 
 
 
-
+die();
 
 // $firstName = $lastName = $birthdayDate = $gender = $emailAddress = $phoneNumber = $subject = $confirmCheck = null;
 $firstNameError = $lastNameError = $birthdayDateError = $genderError = $emailAddressError = $phoneNumberError = $subjectError = $confirmCheckError = $userNameError = null;

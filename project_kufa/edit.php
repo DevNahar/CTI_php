@@ -4,12 +4,12 @@ require_once 'includes/navbar.php';
 require_once 'includes/db.php';
 
 $id = $_GET['id'];
-$select = "SELECT ID, NAME, EMAIL FROM users WHERE ID = $id";
-$slc_Query =  mysqli_query($bd_connect, $select);
+$select = "SELECT id, name, email FROM users WHERE id = $id";
+$slc_Query =  mysqli_query($db_connect, $select);
 $rowdata = mysqli_fetch_assoc($slc_Query);
-$rowid = $rowdata['ID'];
-$rowname = $rowdata['NAME'];
-$rowemail = $rowdata['EMAIL'];
+$rowid = $rowdata['id'];
+$rowname = $rowdata['name'];
+$rowemail = $rowdata['email'];
 
 
 
