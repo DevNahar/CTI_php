@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '../../db.php';
 
 $id = $_SESSION['check_id'];
 
@@ -18,7 +18,7 @@ if(in_array($ext_last_part, $allow_extention)){
         
         $upl_file_new_name = $id . '.' . $ext_last_part;
         
-        $new_file_location = '../images/' .  $upl_file_new_name ;
+        $new_file_location = '../../images/' .  $upl_file_new_name ;
          move_uploaded_file($upl_file['tmp_name'], $new_file_location);
          
         $photo_up = "UPDATE users SET upload_image='$upl_file_new_name' WHERE id=$id";

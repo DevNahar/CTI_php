@@ -1,5 +1,5 @@
 <?php
-require_once 'backend/db.php';
+require_once 'db.php';
 session_start();
 
 $email = $_POST['email'];

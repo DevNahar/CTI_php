@@ -1,5 +1,7 @@
 <?php
-require_once 'header2.php';
+require_once '../db.php';
+require_once 'header.php';
+
 
 
 ?>
@@ -74,8 +76,8 @@ require_once 'header2.php';
                                                     <input type="hidden" class="form-control"  value="<?=$_SESSION['check_id']?>" name="id">
                                                         <label  class="form-label">Upload your image</label>
                                                         <input onchange="document.getElementById('blah').src = window.URL.createObjectURL(this.files[0])" type="file" class="form-control" name="image_upload" >
-                                                        <img id="blah" alt="your image" width="100" height="100" />
-                                                        
+                                                        <img id="blah"  width="100"  />
+                                                        <br>
                                                         <button type="submit" class="btn btn-primary mt-3 " name="img_upld_btn">Upload image</button>
                                                     </div>
                                                 
@@ -115,7 +117,7 @@ require_once 'header2.php';
                        
                     </div>
 <?php
-require_once 'footer2.php';
+require_once 'footer.php';
 
 ?>
                

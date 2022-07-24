@@ -1,9 +1,10 @@
 <?php
 session_start();
+// require_once '../db.php';
 if(!isset($_SESSION['welcome'])){
     header('location:../login.php');
 }
-require_once 'db.php';
+
 
 $id = $_SESSION['check_id'];
 
@@ -12,10 +13,6 @@ $select_user_result = mysqli_query($db_connect, $select_user);
 $after_assoc = mysqli_fetch_assoc($select_user_result);
 
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,28 +32,33 @@ $after_assoc = mysqli_fetch_assoc($select_user_result);
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
-    <link href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
-    <link href="../assets/plugins/pace/pace.css" rel="stylesheet">
+    <link href="/CTI_php/project_kufa/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/CTI_php/project_kufa/assets/plugins/perfectscroll/perfect-scrollbar.css" rel="stylesheet">
+    <link href="/CTI_php/project_kufa/assets/plugins/pace/pace.css" rel="stylesheet">
 
     
     <!-- Theme Styles -->
-    <link href="../assets/css/main.min.css" rel="stylesheet">
-    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="/CTI_php/project_kufa/assets/css/main.min.css" rel="stylesheet">
+    <link href="/CTI_php/project_kufa/assets/css/custom.css" rel="stylesheet">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/neptune.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/neptune.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/CTI_php/project_kufa/assets/images/neptune.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/CTI_php/project_kufa/assets/images/neptune.png" />
 
-   
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     <div class="app align-content-stretch d-flex flex-wrap">
         <div class="app-sidebar">
             <div class="logo">
-                <a href="index.html" class="logo-icon"><span class="logo-text">Rnkass</span></a>
+                <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a>
                 <div class="sidebar-user-switcher user-activity-online">
                     <a href="#">
-                        <img src="../images/<?=$after_assoc['upload_image']?>">
+                        <img src="/CTI_php/project_kufa/images/<?=$after_assoc['upload_image']?>">
                         <span class="activity-indicator"></span>
                         <span class="user-info-text"><?=$_SESSION['check_name']?><br><span class="user-state-info"><?=$_SESSION['check_email']?></span></span>
                     </a>
@@ -66,32 +68,72 @@ $after_assoc = mysqli_fetch_assoc($select_user_result);
                 <ul class="accordion-menu">
                     
                     <li class="active-page">
-                        <a href="dashboard.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
-                    </li>      
-                   
-                    <li class="active-page">
-                        <a href="profile.php" class="active"><i class="material-icons-two-tone">manage_accounts</i>Profile</a>
+                        <a href="/CTI_php/project_kufa/backend/dashboard.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
+                    </li>
+                    <li class="">
+                        <a href="/CTI_php/project_kufa/backend/profiles/profile.php" class="active"><i class="material-icons-two-tone">manage_accounts</i>Profile</a>
                     </li> 
-                    <li>
-                        <a href="#" ><i class="material-icons-two-tone">star</i>Banner<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-                    
+                    <li >
+                        <a href="#" ><i class="material-icons-two-tone">manage_accounts</i>Banner <i class="material-icons has-sub-menu">keyboard_arrow_right</i> </a>
                         <ul class="sub-menu">
+                            <!-- <li>
+                                <a href="add_banner.php">Add Banner</a>
+                            </li> -->
                             <li>
-                                <a href="sign-in.html">Add banner</a>
+                                <a href="/CTI_php/project_kufa/backend/banners/banner_list.php"> Banner List</a>
                             </li>
-                            <li>
-                                <a href="sign-up.html">View banner</a>
-                            </li>
+                            
                             
                         </ul>
-                    </li>              
+                    </li> 
                     
-                    
-                            
+                    <!-- <li>
+                        <a href=""><i class="material-icons-two-tone">star</i>Pages<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="pricing.html">Pricing</a>
+                            </li>
+                            <li>
+                                <a href="invoice.html">Invoice</a>
+                            </li>
+                            <li>
+                                <a href="settings.html">Settings</a>
+                            </li>
+                            <li>
+                                <a href="#">Authentication<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="sign-in.html">Sign In</a>
+                                    </li>
+                                    <li>
+                                        <a href="sign-up.html">Sign Up</a>
+                                    </li>
+                                    <li>
+                                        <a href="lock-screen.html">Lock Screen</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="error.html">Error</a>
+                            </li>
+                        </ul>
+                    </li>                    -->
+                  
+
+                    <!-- <li>
+                        <a href="jamela.php"><i class="material-icons-two-tone">grid_on</i>Tables<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="tables-basic.html">Basic</a>
+                            </li>
+                            <li>
+                                <a href="tables-datatable.html">DataTable</a>
+                            </li>
+                        </ul>
+                    </li> -->
                    
                 </ul>
             </div>
-            
         </div>
         <div class="app-container">
             <div class="search">
@@ -155,10 +197,11 @@ $after_assoc = mysqli_fetch_assoc($select_user_result);
             
                         </div>
                         <div class="d-flex">
-                            <ul class="navbar-nav">                                
-                                <li class="nav-item hidden-on-mobile">
+                            <ul class="navbar-nav">
+                            <li class="nav-item hidden-on-mobile">
                                  <button class="btn btn-danger "> <a class="text-white text-decoration-none" href="../logout.php">Logout</a></button>  
                                 </li>
+                             
                             </ul>
                         </div>
                     </div>

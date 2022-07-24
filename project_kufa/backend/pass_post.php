@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once '../db.php';
 
 $id = $_POST['id'];
 $pass = md5($_POST['password']);

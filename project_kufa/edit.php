@@ -1,7 +1,7 @@
 <?php 
-require_once 'includes/header.php';
-require_once 'includes/navbar.php';
-require_once 'includes/db.php';
+// require_once 'includes/header.php';
+// require_once 'includes/navbar.php';
+require_once 'db.php';
 
 $id = $_GET['id'];
 $select = "SELECT id, name, email FROM users WHERE id = $id";

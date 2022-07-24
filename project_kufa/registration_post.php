@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'backend/db.php';
+require_once 'db.php';
 
 
     $name = $_POST['name'];

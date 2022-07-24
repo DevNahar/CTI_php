@@ -1,6 +1,7 @@
 <?php
-require_once 'header2.php';
 
+require_once '../db.php';
+require_once 'header.php';
 
 ?>
 
@@ -131,6 +132,6 @@ require_once 'header2.php';
 
 
 <?php
-require_once 'footer2.php';
+require_once 'footer.php';
 
 ?>
